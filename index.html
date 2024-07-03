@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Tech Goals</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 data-testid="slackDisplayName">EVC</h1>
+    </header>
+    <main>
+        <section id="goals">
+            <h2>My Tech Goals for the Next 2 Years</h2>
+            <p>As a Tech Farmer, in the next 2 years I want to master agri-tech platforms, develop data-driven web 
+                solutions for sustainable farming, enhance skills in IoT integration for smart agriculture, contribute
+                 to open-source agri-tech projects, and achieve certification in agricultural data analytics and remote sensing.</p>
+        </section>
+        
+        <section id="info">
+            <p data-testid="currentTimeUTC"><i class="fas fa-clock"></i> Current Time in UTC: <span id="time"></span></p>
+            <p data-testid="currentDay"><i class="fas fa-calendar-day"></i> Current Day: <span id="day"></span></p>
+            <p data-testid="slackEmail"><i class="fas fa-envelope"></i> Slack Email: vesionyeaba@gmail.com</p>
+
+            <img data-testid="slackProfilePicture" src="IMG_9776-4.jpg" alt="Slack Profile Picture" width="200" height="200">
+        </section>
+        <section id="links">
+            <a data-testid="hngLink" href="https://hng.tech/learn">HNG Learn</a>
+            <a data-testid="keywordLink" href="https://keyword.dog">Keyword Dog</a>
+            <a data-testid="scrapeanywebLink" href="https://scrapeanyweb.site">Scrape Any Web</a>
+        </section>
+    </main>
+    <script>
+        // JavaScript to update time and day
+        function updateTimeAndDay() {
+            const timeElement = document.getElementById('time');
+            const dayElement = document.getElementById('day');
+            const now = new Date();
+            timeElement.textContent = now.toUTCString().split(' ')[4];
+            dayElement.textContent = now.toUTCString().split(',')[0];
+        }
+
+        // Update every second
+        setInterval(updateTimeAndDay, 1000);
+        updateTimeAndDay(); // Initial call
+    </script>
+</body>
+</html>
